@@ -7,7 +7,8 @@ export default function animate (element) {
 		|| element.config.useDelay === 'onload' && this.pristine
 		|| element.config.useDelay === 'once' && !element.seen
 
-	let styles = [element.styles.inline]
+	const sequence = (element.sequence) ? this.store.sequences[element.sequence.id] : null
+	const styles = [element.styles.inline]
 
 	if (isElementVisible.call(this, element) && !element.visible) {
 
