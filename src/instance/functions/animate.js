@@ -12,6 +12,27 @@ export default function animate (element) {
 
 	if (isElementVisible.call(this, element) && !element.visible) {
 
+		if (sequence) {
+			if (sequence.head.index === null && sequence.tail.index === null) {
+				sequence.head.index = sequence.tail.index = element.sequence.index
+				sequence.head.blocked = sequence.tail.blocked = true
+			}
+			// } else if (sequence.head.index - 1 === element.sequence.index && !sequence.head.blocked) {
+			// 	sequence.head.index--
+			// 	sequence.head.blocked = true
+			//
+			// } else if (sequence.tail.index + 1 === element.sequence.index && !sequence.tail.blocked) {
+			// 	sequence.tail.index++
+			// 	sequence.tail.blocked = true
+			//
+			// } else return
+
+			// window.setTimeout(() => {
+			// 	sequence.head.blocked = sequence.tail.blocked = false
+			// 	this.delegate()
+			// }, sequence.interval)
+		}
+
 		styles.push(element.styles.opacity.computed)
 		styles.push(element.styles.transform.generated.final)
 
