@@ -26,7 +26,15 @@ export default function animate (element) {
 		registerCallbacks(element, isDelayed)
 		element.node.setAttribute('style', styles.join(' '))
 
-	} else if (!isElementVisible.call(this, element) && element.visible) {
+	} else if (!isElementVisible.call(this, element) && element.visible && element.config.reset) {
+
+		// if (sequence) {
+		// 	if (sequence.head.index === element.sequence.index) {
+		// 		sequence.head.index++
+		// 	} else if (sequence.tail.index === element.sequence.index) {
+		// 		sequence.tail.index--
+		// 	} else return
+		// }
 
 		styles.push(element.styles.opacity.generated)
 		styles.push(element.styles.transform.generated.initial)
