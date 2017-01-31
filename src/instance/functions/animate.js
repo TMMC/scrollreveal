@@ -13,10 +13,10 @@ export default function animate (element) {
 	if (isElementVisible.call(this, element) && !element.visible) {
 
 		if (sequence) {
-			if (sequence.head.index === null && sequence.tail.index === null) {
-				sequence.head.index = sequence.tail.index = element.sequence.index
-				sequence.head.blocked = sequence.tail.blocked = true
-			}
+			// if (sequence.head.index === null && sequence.tail.index === null) {
+			// 	sequence.head.index = sequence.tail.index = element.sequence.index
+			// 	sequence.head.blocked = sequence.tail.blocked = true
+			// }
 			// } else if (sequence.head.index - 1 === element.sequence.index && !sequence.head.blocked) {
 			// 	sequence.head.index--
 			// 	sequence.head.blocked = true
