@@ -1,5 +1,4 @@
 const buble = require('rollup-plugin-buble')
-const istanbul = require('rollup-plugin-istanbul')
 const json = require('rollup-plugin-json')
 const nodeResolve = require('rollup-plugin-node-resolve')
 
@@ -22,16 +21,6 @@ module.exports = function (karma) {
 				json(),
 				nodeResolve({ jsnext: true, main: true }),
 				buble(),
-				istanbul({
-					exclude: [
-						'src/index.js',
-						'test/**',
-						'**/node_modules/**',
-					],
-					instrumenterConfig: {
-						embedSource: true,
-					},
-				}),
 			],
 			sourceMap: 'inline',
 			format: 'iife',
@@ -55,10 +44,6 @@ module.exports = function (karma) {
 		karma.set({
 			autoWatch: false,
 			browsers: Object.keys(customLaunchers),
-			coverageReporter: {
-				type: 'lcovonly',
-				dir: 'coverage/',
-			},
 			customLaunchers,
 			reporters: ['mocha', 'saucelabs'],
 			sauceLabs: {
