@@ -45,7 +45,7 @@ module.exports = function (karma) {
 
 		browserDisconnectTimeout: 60 * 1000,
 		browserDisconnectTolerance: 1,
-		browserNoActivityTimeout: 60 * 1000,
+		browserNoActivityTimeout: 3 * 60 * 1000,
 		captureTimeout: 4 * 60 * 1000,
 	})
 
