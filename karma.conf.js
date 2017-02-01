@@ -60,7 +60,7 @@ module.exports = function (karma) {
 				dir: 'coverage/',
 			},
 			customLaunchers,
-			reporters: ['dots', 'saucelabs', 'coverage'],
+			reporters: ['mocha', 'saucelabs', 'coverage'],
 			sauceLabs: {
 				testName: 'ScrollReveal',
 				build: process.env.TRAVIS_BUILD_NUMBER || 'manual',
