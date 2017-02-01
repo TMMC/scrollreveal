@@ -12,7 +12,7 @@ export default function animate (element) {
 
 	if (isElementVisible.call(this, element) && !element.visible) {
 
-		if (sequence) {
+		// if (sequence) {
 			// if (sequence.head.index === null && sequence.tail.index === null) {
 			// 	sequence.head.index = sequence.tail.index = element.sequence.index
 			// 	sequence.head.blocked = sequence.tail.blocked = true
@@ -31,7 +31,7 @@ export default function animate (element) {
 			// 	sequence.head.blocked = sequence.tail.blocked = false
 			// 	this.delegate()
 			// }, sequence.interval)
-		}
+		// }
 
 		styles.push(element.styles.opacity.computed)
 		styles.push(element.styles.transform.generated.final)
